@@ -1,80 +1,78 @@
-# Smart Medicine Delivery Car - README
+# Gesture-Controlled and Voice-Controlled Smart Car 🚗💡
 
 ## Project Overview
-This project introduces an innovative solution for hospital medicine delivery using a smart, voice- and gesture-controlled car. Designed to navigate busy hospital corridors, this system can deliver medicine efficiently, saving valuable time, money, and lives. With seamless obstacle avoidance and real-time response, our smart car is revolutionizing hospital logistics.
+This project introduces an innovative solution for hands-free vehicle navigation using voice and hand gesture controls. The car is designed to navigate through complex environments, avoiding obstacles while responding to real-time voice commands and hand gestures. By leveraging advanced machine learning and computer vision techniques, the system provides a seamless and intuitive user experience. 🤖
 
 ## Features
-- **Voice-Controlled Navigation:** Simply speak commands to direct the smart car to its destination.
-- **Gesture-Controlled Navigation:** Use hand gestures to guide the car through the hospital.
-- **Obstacle Avoidance:** The system detects and avoids obstacles, ensuring safe and smooth navigation.
-- **Real-Time Response:** Thanks to MediaPipe Hands integration, the car can respond instantly to voice or hand gesture inputs.
-- **Efficient Medicine Delivery:** Ensures quick, safe transport of medicine to hospital rooms, improving patient care and hospital efficiency.
+- **Voice-Controlled Navigation** 🎙️: Navigate the car effortlessly using spoken commands.
+- **Gesture-Controlled Navigation** ✋: Use hand gestures to guide the car with precision.
+- **Obstacle Avoidance** 🚧: Real-time detection and avoidance of obstacles ensure smooth movement.
+- **Real-Time Response** ⚡: Instant processing of voice and gesture inputs for seamless control.
+- **Advanced Computer Vision** 👀: Utilizes **MediaPipe Hands** for high-fidelity hand tracking.
 
 ## MediaPipe Hands Integration
 
 ### Hand and Finger Tracking
-The core of our gesture-controlled navigation system is powered by **MediaPipe Hands**, a high-fidelity hand and finger tracking solution. MediaPipe Hands leverages machine learning (ML) to infer 21 3D hand landmarks from just a single frame, achieving real-time performance even on mobile devices.
+The core of our gesture control system is powered by **MediaPipe Hands**, an advanced hand and finger tracking solution that employs machine learning to infer 21 3D hand landmarks from a single frame. This enables robust and real-time gesture recognition even on mobile devices.
 
-Key benefits of integrating MediaPipe Hands into the system:
-- **Real-time Hand Tracking:** The system detects and tracks hand gestures in real-time, enabling precise control of the smart car.
-- **Multiple Hand Support:** MediaPipe can detect and track multiple hands, allowing flexibility in gesture control.
-- **Mobile-Friendly:** The system is optimized for performance on mobile devices, ensuring portability and ease of use.
+#### Key Benefits:
+- **High-Precision Tracking** ✅: Detects hand landmarks with 95.7% accuracy.
+- **Multi-Hand Support** ✌️: Recognizes gestures from multiple hands simultaneously.
+- **Optimized for Mobile** 📱: Delivers real-time performance on mobile and embedded systems.
 
 ### Palm Detection Model
-The palm detection model plays a crucial role in identifying hand locations in the environment. It is designed to work effectively across varying hand sizes and even in self-occluded scenarios (e.g., handshakes).
+The palm detection model plays a critical role in accurately locating hand positions within an image. Unlike traditional hand detection methods, this model is optimized for real-time applications and can effectively handle occlusions.
 
-- **Single-Shot Detector:** Optimized for mobile, real-time use.
-- **Effective Self-Occlusion Handling:** The model uses non-maximum suppression to handle multiple hand occlusions, ensuring accurate palm detection.
-- **Context-Aware:** Incorporates additional context, like arm or body features, to improve hand localization accuracy.
-- **High Precision:** Achieves an average precision of 95.7% in palm detection.
+- **Single-Shot Detector** 🔍: Designed for fast and efficient palm detection.
+- **Context-Aware** 🧠: Uses additional contextual features (arm, body) for improved accuracy.
+- **Non-Maximum Suppression** 🚀: Effectively handles multiple hand occlusions.
 
 ### Hand Landmark Model
-After detecting the palm, the hand landmark model identifies and localizes 21 key 3D hand coordinates within the detected region. This model is robust to partial visibility and self-occlusions, ensuring accurate gesture interpretation.
+After detecting the palm, the hand landmark model predicts precise 3D key points for hand gestures. This allows the system to interpret complex gestures with minimal latency.
 
-- **Precise Keypoint Localization:** The model locates 21 hand-knuckle coordinates with high accuracy.
-- **Training Data:** The model was trained using approximately 30,000 real-world images with manually annotated 3D coordinates.
-- **Synthetic Data:** To improve robustness, synthetic hand models were also used during training for various hand poses.
+- **21 Key-Point Detection** 🎯: Accurately tracks hand-knuckle coordinates.
+- **Robust to Occlusions** 🛡️: Performs well even when parts of the hand are obscured.
+- **Extensive Training Data** 📊: Trained on a dataset of ~30,000 annotated real-world images.
 
 ## How It Works
+1. **User Input** 🎙️: The system receives a voice command or detects a hand gesture.
+2. **Palm Detection** ✋: Identifies the location of the user's hand using the palm detection model.
+3. **Gesture Recognition** 🤖: The hand landmark model processes hand movements and converts them into commands.
+4. **Navigation and Control** 🚗: The car moves according to the recognized voice or gesture command, avoiding obstacles as needed.
 
-1. **Voice Command or Gesture Input:** The user issues a voice command or uses a hand gesture to instruct the car.
-2. **Palm Detection:** The system detects the palm using the MediaPipe Hands palm detection model.
-3. **Gesture Tracking:** The hand landmark model tracks the 21 key points of the hand and interprets the gesture to control the car's movement.
-4. **Navigation and Obstacle Avoidance:** The car navigates the hospital corridors, avoiding obstacles in real-time.
-5. **Medicine Delivery:** The car delivers medicine to the designated room with precision and speed.
+## Demo Video 🎥
+[Click here to watch the demo](video/demo.mp4)
+
 
 ## Setup & Installation
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-repository/smart-medicine-delivery-car.git
+   git clone https://github.com/your-repository/gesture-controlled-car.git
    ```
 
 2. **Install Dependencies**
-   Install the necessary dependencies by running:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **MediaPipe Installation**
-   To use the MediaPipe Hands functionality, ensure you have installed MediaPipe:
+3. **Install MediaPipe**
    ```bash
    pip install mediapipe
    ```
 
 4. **Run the Application**
-   Start the car navigation system by running:
    ```bash
    python app.py
    ```
 
 ## Contributing
-We welcome contributions to enhance the functionality of the smart medicine delivery car. If you'd like to contribute, please fork the repository, create a branch, and submit a pull request.
+We welcome contributions to enhance the system. If you’d like to contribute, please fork the repository, create a branch, and submit a pull request. 🤝
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-- **MediaPipe Hands:** For providing the cutting-edge hand and gesture tracking technology.
-- **TensorFlow:** For enabling real-time machine learning inference.
-- **The Open Source Community:** For their continuous contributions to machine learning and computer vision.
+## Contact
+For inquiries or collaboration, reach out at:
+**Email:** yousefmostafa222004@gmail.com 📧
+
